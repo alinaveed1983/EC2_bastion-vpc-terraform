@@ -1,5 +1,6 @@
 variable "ami_id" {
   description = "AMI ID for EC2 instance"
+  default     = "ami-00a929b66ed6e0de6"
 }
 
 variable "instance_type" {
@@ -13,4 +14,5 @@ variable "subnet_id" {
 
 variable "instance_name" {
   description = "Name tag for EC2 instance"
+  default     = "rds-ec2"
 }
