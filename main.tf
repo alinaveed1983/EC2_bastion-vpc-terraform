@@ -13,10 +13,20 @@ module "vpc" {
   private_rt_name       = var.private_rt_name
 }
 
-module "ec2_bastion" {
+module "ec2_bastion_1" {
   source        = "./modules/ec2"
   ami_id        = var.ami_id
   instance_name = var.instance_name
   instance_type = var.instance_type
   subnet_id     = module.vpc.public_subnet_1_id
 }
+
+/*
+module "ec2_bastion_2" {
+  source        = "./modules/ec2"
+  ami_id        = var.ami_id_2
+  instance_name = var.instance_name_2
+  instance_type = var.instance_type_2
+  subnet_id     = module.vpc.public_subnet_2_id
+}
+*/
