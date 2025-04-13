@@ -1,7 +1,14 @@
-# EC2 Module Variables
+# For 1st EC2
 variable "ami_id" {}
 variable "instance_name" {}
 variable "instance_type" {}
+
+/*
+# For 2nd EC2
+variable "ami_id_2" {}
+variable "instance_name_2" {}
+variable "instance_type_2" {}
+*/
 
 # VPC Module Variables
 variable "vpc_cidr_block" {}
