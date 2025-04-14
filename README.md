@@ -12,6 +12,7 @@ Multiple EC2 instances can be created using the same reusable code by providing 
 
 ## Terraform Project Flow
 
+```
 terraform.tfvars
     ↓
 variables.tf (root)
@@ -31,7 +32,7 @@ Modules/
     └── outputs.tf
     ↓
 outputs.tf (root)
-
+```
 
 
 ## Steps to Add Another EC2 Instance
