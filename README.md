@@ -30,6 +30,7 @@ outputs.tf (root)
 ```
 1. root/terraform.tfvars → only talks to root/variables.tf
 2. Module cannot see these values unless you pass them explicitly in root/main.tf
+3. Terraform philosophy: Modules should never have their own tfvars
 ```
 
 ## Steps to Add Another EC2 Instance
