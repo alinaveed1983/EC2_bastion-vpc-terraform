@@ -28,8 +28,8 @@ outputs.tf (root)
 
 ## Note
 ```
-1. terraform.tfvars → only talks to root/variables.tf
-2. Module cannot see these values unless you pass them explicitly in main.tf(root)
+1. root/terraform.tfvars → only talks to root/variables.tf
+2. Module cannot see these values unless you pass them explicitly in root/main.tf
 ```
 
 ## Steps to Add Another EC2 Instance
