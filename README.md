@@ -11,7 +11,6 @@ Multiple EC2 instances can be created using the same reusable code by providing 
 ---
 
 ## Terraform Project Flow
-## Terraform Project Flow
 
 terraform.tfvars
     ↓
