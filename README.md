@@ -5,13 +5,21 @@ We can create multiple EC2 instances using the same code by providing different 
 # Architecture Diagram
 ![image](https://github.com/user-attachments/assets/90e5976c-eeee-4231-8fc5-d3476e89d3ad)
 
-Steps to Add Another EC2 Instance
-To add another EC2 instance, update the following Terraform files:
+## Steps to Add Another EC2 Instance
 
-main.tf
+To add a new EC2 instance, make the necessary changes in the following Terraform files:
 
-outputs.tf
+- `main.tf`
+- `outputs.tf`
+- `variables.tf`
+- `terraform.tfvars`
 
-variables.tf
+---
 
-terraform.tfvars
+> **Note:**  
+> While adding a new EC2 instance, ensure to provide unique values for:
+> - `instance_name`
+> - `ami_id`
+> - `instance_type`
+
+This helps to avoid any conflict and ensures a clean deployment.
