@@ -10,27 +10,19 @@ Multiple EC2 instances can be created using the same reusable code by providing 
 
 ---
 
-## Terraform Project Flow
+## Data Flow Diagram
 
 ```
 terraform.tfvars
-    ↓
+        ↓
 variables.tf (root)
-    ↓
+        ↓
 main.tf (root)
-    ↓
-Modules/
-│
-├── modules/vpc/
-│   ├── variables.tf
-│   ├── main.tf
-│   └── outputs.tf
-│
-└── modules/ec2/
-    ├── variables.tf
-    ├── main.tf
-    └── outputs.tf
-    ↓
+        ↓
+Modules
+   ├── modules/vpc/variable.tf → main.tf → outputs.tf
+   └── modules/ec2/variable.tf → main.tf → outputs.tf
+        ↓
 outputs.tf (root)
 ```
 
