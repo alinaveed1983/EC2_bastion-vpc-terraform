@@ -7,7 +7,31 @@ Multiple EC2 instances can be created using the same reusable code by providing 
 
 ## Architecture Diagram
 ![image](https://github.com/user-attachments/assets/90e5976c-eeee-4231-8fc5-d3476e89d3ad)
-
+```
+EC2_bastion-vpc-terraform/
+├── main.tf                  # Module calls
+├── outputs.tf               # Aggregated outputs
+├── provider.tf              # AWS region & profile
+├── terraform.tfvars         # All environment-specific inputs
+├── variable.tf              # All declared inputs used by modules
+├── README.md
+│
+├── modules/
+│   ├── ec2/                 # Generic EC2 instance creator
+│   │   ├── main.tf
+│   │   ├── outputs.tf
+│   │   └── variable.tf
+│
+│   ├── ssm_role/            # Shared IAM role for all EC2 instances
+│   │   ├── main.tf
+│   │   ├── outputs.tf
+│   │   └── variable.tf
+│
+│   └── vpc/                 # Custom VPC and Subnets
+│       ├── main.tf
+│       ├── outputs.tf
+│       └── variable.tf
+```
 ---
 
 ## Data Flow Diagram
