@@ -65,6 +65,14 @@ To add a new EC2 instance, make the necessary changes in the following Terraform
 - `variables.tf`
 - `terraform.tfvars`
 
+Commands
+```
+terraform init
+terraform plan
+terraform apply
+terraform destroy
+```
+
 ---
 
 > **Note:**  
