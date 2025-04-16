@@ -37,16 +37,45 @@ EC2_bastion-vpc-terraform/
 
 ```
 terraform.tfvars
-        ↓
+    └─┐
+     ▼
 variables.tf (root)
-        ↓
+     └─┐
+      ▼
 main.tf (root)
-        ↓
-Modules
-   ├── modules/vpc/variable.tf → main.tf → outputs.tf
-   └── modules/ec2/variable.tf → main.tf → outputs.tf
-        ↓
-outputs.tf (root)
+ ├────┬───────────────────────────────────────────────────────────────┐
+ ▼    ▼                                                               ▼
+module "vpc"                                                  module "ssm_role"
+ │                                                             │
+ ▼                                                             ▼
+modules/vpc/variables.tf                                modules/ssm_role/variables.tf
+ │                                                             │
+ ▼                                                             ▼
+modules/vpc/main.tf                                     modules/ssm_role/main.tf
+ │                                                             │
+ ▼                                                             ▼
+modules/vpc/outputs.tf                                  modules/ssm_role/outputs.tf
+         │                                                         │
+         └─────────────────────────────────────────────┬──────────┘
+                                                       ▼
+                                               main.tf (root)
+                                       passes shared value to →
+                                                   ▼
+                                            module "ec2_bastion_1"
+                                                   │
+                                                   ▼
+                                         modules/ec2/variables.tf
+                                                   │
+                                                   ▼
+                                          modules/ec2/main.tf
+                                                   │
+                                                   ▼
+                                          modules/ec2/outputs.tf
+                                                   │
+                                                   ▼
+                                            outputs.tf (root)
+
+
 ```
 
 ## Note
