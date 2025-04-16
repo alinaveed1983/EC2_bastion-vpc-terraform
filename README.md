@@ -88,7 +88,9 @@ modules/vpc/outputs.tf                                  modules/ssm_role/outputs
 ## Steps to Add Another EC2 Instance
 
 To add a new EC2 instance, make the necessary changes in the following Terraform files:
+```
 "After adding any new module block in main.tf, always run terraform init to ensure Terraform downloads and registers the module correctly."
+```
 
 - `main.tf`
 - `outputs.tf`
