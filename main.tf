@@ -13,12 +13,18 @@ module "vpc" {
   private_rt_name       = var.private_rt_name
 }
 
+module "ssm_role" {
+  source = "./modules/ssm_role"
+  role_name = "EC2-ssm-role"
+}
+
 module "ec2_bastion_1" {
   source        = "./modules/ec2"
   ami_id        = var.ami_id
   instance_name = var.instance_name
   instance_type = var.instance_type
   subnet_id     = module.vpc.public_subnet_1_id
+  instance_profile_name = module.ssm_role.instance_profile_name
 }
 
 /*
@@ -27,6 +33,7 @@ module "ec2_bastion_2" {
   ami_id        = var.ami_id_2
   instance_name = var.instance_name_2
   instance_type = var.instance_type_2
-  subnet_id     = module.vpc.public_subnet_2_id
+  subnet_id     = module.vpc.public_subnet_1_id
+  instance_profile_name = module.ssm_role.instance_profile_name
 }
 */
