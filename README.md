@@ -6,7 +6,6 @@ Multiple EC2 instances can be created using the same reusable code by providing 
 ---
 
 ## Architecture Diagram
-![image](https://github.com/user-attachments/assets/90e5976c-eeee-4231-8fc5-d3476e89d3ad)
 ```
 EC2_bastion-vpc-terraform/
 ├── main.tf                  # Module calls
